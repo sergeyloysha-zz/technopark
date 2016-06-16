@@ -2,11 +2,12 @@ var gulp        = require('gulp');
 var browserSync = require('browser-sync');
 var stylus        = require('gulp-stylus');
 var jade        = require('gulp-jade');
+var ghPages = require('gulp-gh-pages');
 var reload      = browserSync.reload;
 
 sources = {
   jade: "./app/!(_)*.jade",
-  stylus: "./app/stylus/**/*.styl",
+  stylus: "./app/stylus/**/*.*",
   fonts: "./app/fonts/**/*.*",
   images: "./app/images/**/*.*"
 };
@@ -52,6 +53,11 @@ gulp.task('images', function () {
     return gulp.src(sources.images)
         .pipe(gulp.dest(destinations.images))
         .pipe(reload({stream: true}));
+});
+
+gulp.task('deploy', function() {
+  return gulp.src('./dist/**/*')
+    .pipe(ghPages());
 });
 
 gulp.task('default', ['stylus', 'templates', 'fonts', 'images'], function () {

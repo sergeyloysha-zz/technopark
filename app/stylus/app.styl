@@ -1,3 +1,5 @@
+@require "normalize.css"
+
 @font-face {
   font-family "robotoregular"
   font-style normal
@@ -13,24 +15,20 @@
 base-font = 'robotoregular', Helvetica, Arial, sans-serif
 
 font-size = 1.4rem
-line-height = 2.4rem
+line-height = 1.8rem
 
-base-color = #999
-link-color = #1A1B3A
-link-hover-color = #333
-
-*
-  border 0
-  font inherit
-  margin 0
-  padding 0
-  -moz-osx-font-smoothing grayscale
+*,
+*:before,
+*:after
   box-sizing border-box
+  outline none
 
 html
   font-size 62.5%
-  height 100%
-  background: rgb(255, 255, 255);
+  background rgb(255, 255, 255)
+  text-rendering optimizeLegibility
+  -webkit-font-smoothing antialiased
+  -moz-osx-font-smoothing grayscale
 
 body
   font-family base-font
@@ -38,3 +36,138 @@ body
   line-height line-height
   min-height 100%
   position relative
+
+a,
+a:link,
+a:visited
+  text-decoration none
+
+.header
+  background rgb(68, 136, 255)
+
+  &__inner
+    display flex
+    flex-direction column
+    justify-content space-between
+    max-width 1140px
+    height 120px
+    margin 0 auto
+
+.head
+  display flex
+  justify-content space-between
+  align-items center
+  margin 10px 0 0 0
+
+  &__link
+    position relative
+    color #fff
+    text-transform uppercase
+    letter-spacing 1px
+
+    &:after
+      content ''
+      display inline-block
+      position absolute
+      bottom -2px
+      width 0
+      left 0
+      height 1px
+      background rgba(255, 255, 255, 0.35)
+      transition width 0.15s
+
+    &:hover::after
+      width 100%
+
+    &--phone
+      margin 0 45px
+
+  &__search
+    flex 1
+    margin 0 45px 0 0
+
+.logo
+  transform translateY(0)
+
+  &__big,
+  &__small
+    display flex
+  &__small
+    display none
+
+  &:active
+    transform translateY(1px)
+
+.search
+  position relative
+  display flex
+
+  &__button
+    position absolute
+    top 10px
+    z-index 1
+
+  &__input
+    padding-left 30px
+    width 100%
+    height 40px
+    line-height 40px
+    background transparent
+    border none
+    box-shadow inset 0px -1px 0px 0px rgba(255, 255, 255, 0.5)
+    color #fff
+    text-transform uppercase
+    cursor pointer
+    z-index 2
+    transition: box-shadow .2s
+
+    &::-webkit-input-placeholder
+      text-transform uppercase
+      color rgba(255, 255, 255, 0.5)
+    &::-moz-placeholder
+      text-transform uppercase
+      color rgba(255, 255, 255, 0.5)
+    &:-ms-input-placeholder
+      text-transform uppercase
+      color rgba(255, 255, 255, 0.5)
+    &:-moz-placeholder
+      text-transform uppercase
+      color rgba(255, 255, 255, 0.5)
+
+    &:hover,
+    &:focus
+      box-shadow inset 0px -1px 0px 0px rgba(255, 255, 255, 1)
+
+    &:focus
+      cursor auto
+
+.navigation
+
+  &__list
+    display flex
+    margin 0 -15px
+    padding 0
+    list-style none
+
+  &__item
+    &--last
+      margin-left auto
+
+  &__link
+    display flex
+    color #fff
+    text-transform uppercase
+    letter-spacing 1px
+    transition all .2s
+
+    &:hover
+      background #447ada
+
+    &--active
+      background #444
+
+      &:hover
+        background #444
+
+    span
+      padding 15px
