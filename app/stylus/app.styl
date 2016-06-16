@@ -7,6 +7,12 @@
 }
 
 @font-face {
+  font-family "robotomedium"
+  font-style normal
+  src url('../fonts/Roboto Medium.ttf')
+}
+
+@font-face {
   font-family "robotobold"
   font-style normal
   src url('../fonts/Roboto Bold.ttf')
@@ -44,6 +50,7 @@ a:visited
 
 .header
   background rgb(68, 136, 255)
+  font-family 'robotomedium'
 
   &__inner
     display flex
@@ -57,7 +64,7 @@ a:visited
   display flex
   justify-content space-between
   align-items center
-  margin 10px 0 0 0
+  margin 15px 0 0 0
 
   &__link
     position relative
@@ -155,6 +162,8 @@ a:visited
 
   &__link
     display flex
+    padding 10px 15px
+    line-height 20px
     color #fff
     text-transform uppercase
     letter-spacing 1px
@@ -169,5 +178,5 @@ a:visited
       &:hover
         background #444
 
-    span
-      padding 15px
+    svg
+      margin-right 10px
