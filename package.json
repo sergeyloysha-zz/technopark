@@ -1,0 +1,21 @@
+{
+  "name": "Technopark",
+  "version": "1.0.0",
+  "description": "",
+  "main": "gulpfile.js",
+  "scripts": {
+    "start": "gulp"
+  },
+  "author": "sergeyloysha",
+  "license": "MIT",
+  "repository" : {
+    "type" : "git",
+    "url" : "https://github.com/sergeyloysha/technopark.git"
+  }
+  "devDependencies": {
+    "browser-sync": "^2.12.8",
+    "gulp": "^3.9.1",
+    "gulp-jade": "^1.1.0",
+    "gulp-stylus": "^2.3.1"
+  }
+}
