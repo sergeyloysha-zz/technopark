@@ -1,6 +1,8 @@
 var gulp        = require('gulp');
 var browserSync = require('browser-sync');
 var stylus        = require('gulp-stylus');
+var postcss = require('gulp-postcss');
+var autoprefixer = require('autoprefixer');
 var jade        = require('gulp-jade');
 var ghPages = require('gulp-gh-pages');
 var reload      = browserSync.reload;
@@ -39,8 +41,12 @@ gulp.task('templates', function() {
 gulp.task('jade-watch', ['templates'], reload);
 
 gulp.task('stylus', function () {
+    var processors = [
+      autoprefixer({browsers: ['last 2 versions', 'Safari <= 9']}),
+    ];
     return gulp.src(sources.stylus)
         .pipe(stylus({style: "compressed"}))
+        .pipe(postcss(processors))
         .pipe(gulp.dest(destinations.css))
         .pipe(reload({stream: true}));
 });
