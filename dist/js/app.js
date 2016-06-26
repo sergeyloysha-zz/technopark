@@ -31,6 +31,7 @@ $(function() {
   });
 
   $('.popup__control').on('click', function(e){
+    e.preventDefault();
     $('html').removeClass('overlay--open');
     $('.overlay').addClass('overlay--hidden');
   });
