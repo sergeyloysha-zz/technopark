@@ -483,7 +483,7 @@ main
 
   &__input
     position relative
-    border 1px solid #444
+    border 1px solid #999
     padding 10px 15px 10px 50px
     width 160px
     text-align right
@@ -536,3 +536,169 @@ main
 
     &:hover
       box-shadow inset 0px -1px 0px 0px #999
+
+.overlay
+  position fixed
+  top 0
+  right 0
+  bottom 0
+  left 0
+  z-index 100
+  overflow-y auto
+  opacity 1
+  transition opacity .15s ease-in
+  background rgba(153, 153, 153, 0.5)
+  text-align center
+
+  &--open
+    position static !important
+    overflow hidden
+
+  &--hidden
+    transition opacity .15s ease-in,visibility .15s ease-in
+    visibility hidden
+    overflow hidden
+    opacity 0
+
+    .popup
+      transform translateY(-100px)
+      opacity 0
+
+.popup
+  display inline-block
+  position relative
+  width 700px
+  margin 120px 0
+  box-shadow 0 5px 5px 0 rgba(0, 0, 0, 0.2)
+  transform translateY(0)
+  opacity 1
+  transition: transform .3s, opacity .2s
+
+  &__inner
+    padding 30px
+    background #fff
+
+  &__control
+    position absolute
+    top 0
+    right 0
+    width 40px
+    height 40px
+    background #fff
+
+    &:after
+      content ' '
+      position absolute
+      top 10px
+      left 10px
+      right 10px
+      bottom 10px
+      width 20px
+      height 20px
+      background url('../images/close_dark.svg') center no-repeat
+      opacity 1
+      transition opacity .2s
+
+    &:hover
+      &:after
+        opacity 0.5
+
+.card
+
+  text-align left
+
+  &__photo
+    margin 30px 0
+    text-align center
+
+    img
+      display inline-block
+      height 400px
+
+  &__content
+    display flex
+    border-top 1px solid #e6e6e6
+
+  &__title
+    display block
+    font-size 25px
+    line-height 30px
+    color #444
+    font-weight 500
+    margin 25px 0 20px 0
+
+  &__data
+    flex-grow 2
+    flex-shrink 0
+    position relative
+
+    &-link
+      color #48f
+
+    &-table
+      width calc(100% - 30px)
+      margin-bottom 15px
+
+      &__row
+        height 25px
+
+      &__row:first-child
+        height 20px
+
+      &__cell
+        width 50%
+
+        span
+          font-weight 400
+          width 80%
+
+  &__info
+    flex-grow 1
+    flex-shrink 1
+    border-left 1px solid #e6e6e6
+    padding: 0 0 0 30px
+
+    &-text
+      position relative
+
+    &-stock
+      margin 25px 0 10px 0
+
+      &__text
+        font-weight 500
+        color #444
+
+.button
+  display inline-flex
+  align-items center
+  padding 10px 15px
+  border 1px solid #48f
+  cursor pointer
+  justify-content center
+  transition background .2s
+  transform translateY(0)
+
+  &:hover
+    background rgba(68, 136, 255, 0.05)
+
+  &:active
+    transform translateY(1px)
+
+  i
+    width 20px
+    height 20px
+    background-repeat none
+    background-position center
+    margin-right 10px
+
+  span
+    line-height 2rem
+    text-transform uppercase
+    color #48f
+
+  &--block
+    display flex
+
+  &--cart
+    i
+      background-image url('../images/cart_blue.svg')

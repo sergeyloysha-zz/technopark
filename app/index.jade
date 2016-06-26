@@ -145,10 +145,10 @@ html(lang="en")
         ul.products__list
           each val in products
             li.product
-              a.product__inner(href='#')
+              a.product__inner(href='/product/'+val.id+'', data-open-id=''+val.id+'')
                 if val.type == 1
                   .product__image
-                    img(src='images/'+val.image)
+                    img(src='images/'+val.image+'')
                   .product__name
                      span= val.name
                   .product__details
@@ -177,6 +177,58 @@ html(lang="en")
           li.footer__item.footer__item--last
             span Сделано в 
             a.footer__link(href='http://skrotskystudio.com/', target='_blank') Студии Вадима Скротского
-            
+    
+    section.overlay.overlay--hidden
+      .popup
+        a.popup__control(href='#')
+        .popup__inner.card
+          .card__photo
+            img(src='images/xe2.jpg')
+          .card__content
+            .card__data
+              h1.card__title Фотоаппарат Fujifilm X100S
+              table.card__data-table
+                tbody.card__data-table__body
+                  tr.card__data-table__row
+                    td.card__data-table__cell
+                      span Тип камеры
+                    td.card__data-table__cell
+                      span беззеркальная
+                  tr.card__data-table__row
+                    td.card__data-table__cell
+                      span Тип матрицы
+                    td.card__data-table__cell
+                      span CMOS
+                  tr.card__data-table__row
+                    td.card__data-table__cell
+                      span Размер экрана
+                    td.card__data-table__cell
+                      span 3"
+                  tr.card__data-table__row
+                    td.card__data-table__cell
+                      span
+                        | Количество точек <br/>
+                        | матрицы
+                    td.card__data-table__cell
+                      span 16.3МП
+                  tr.card__data-table__row
+                    td.card__data-table__cell
+                      span Физический размер матрицы
+                    td.card__data-table__cell
+                      span APS-C (1.5 crop)
+                  tr.card__data-table__row
+                    td.card__data-table__cell
+                      span Фокусное расстояние
+                    td.card__data-table__cell
+                      span 35мм
+              a.card__data-link(href='#') Полные характеристики
+            .card__info
+              span.card__title 12 999 000 руб.
+              a.button.button--cart.button--block(href='#')
+                i
+                span В корзину
+              .card__info-stock
+                span.card__info-stock__text В наличии
+              span.card__info-text Доставка по Минску бесплатно с 11 до 20 часов
+                
     script(src="js/app.js")
-        

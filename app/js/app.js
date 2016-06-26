@@ -24,4 +24,15 @@ $(function() {
       $(this).val(response);
   });
 
+  $('[data-open-id]').on('click', function(e){
+    e.preventDefault();
+    $('html').addClass('overlay--open');
+    $('.overlay').removeClass('overlay--hidden');
+  });
+
+  $('.popup__control').on('click', function(e){
+    $('html').removeClass('overlay--open');
+    $('.overlay').addClass('overlay--hidden');
+  });
+
 });
