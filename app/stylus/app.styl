@@ -305,6 +305,152 @@ main
     svg
       margin-left auto
 
+.filters
+  margin 30px 0 45px 0
+
+  &__list
+    display flex
+    margin 0
+    padding 0
+    list-style none
+
+  &__item
+    margin-right 15px
+
+.filter
+  position relative
+  width 190px
+
+  &--large
+    width 240px
+
+
+  &--active
+    .filter__link
+      box-shadow 0 5px 5px 0 rgba(0, 0, 0, 0.2)
+      border-left-color #fff
+      border-right-color #fff
+      border-top-color #e6e6e6
+      border-bottom-color #e6e6e6
+      &:hover
+        border-left-color #fff
+        border-right-color #fff
+        border-top-color #e6e6e6
+        border-bottom-color #e6e6e6
+        background #fff
+
+    .dropdown
+      max-height 900px
+      opacity 1
+      top 100%
+
+  &__link
+    position relative
+    display block
+    height 40px
+    padding 0 15px
+    line-height 38px
+    cursor pointer
+    user-select none
+    border 1px solid #999
+    background #fff
+    transition border .2s, background .2s, box-shadow .3s
+
+
+    &:hover
+      border 1px solid #48f
+      background rgba(68, 136, 255, 0.05)
+
+      .filter__title
+        color #48f
+
+      .filter__drop
+        background-image url('../images/drop_blue.svg')
+
+  &__title
+    display inline-block
+    width calc(100% - 25px)
+    text-transform uppercase
+    color #444
+    white-space nowrap
+    overflow hidden
+    transition color .2s
+
+  &__drop
+    position absolute
+    width 20px
+    height 20px
+    top 10px
+    right 11px
+    background-image url('../images/drop_dark.svg')
+    background-position center
+    background-repeat no-repeat
+    transition background-image .2s
+
+.dropdown
+  position absolute
+  top 50%
+  right 0
+  bottom auto
+  left 0
+  max-height 0
+  opacity 0
+  display block
+  overflow hidden
+  z-index: 20
+  box-shadow 0 5px 5px 0 rgba(0, 0, 0, 0.2)
+  transition max-height .3s, opacity .1s, top .2s
+
+  &__inner
+    position relative
+    background #fff
+    padding 15px 0
+
+  &__list
+    margin 0
+    padding 0
+    list-style none
+
+  &__item
+    position relative
+
+  &__input
+    opacity 0
+    z-index -1
+    position absolute
+
+    &:checked + .dropdown__text:after
+      opacity 1
+
+  &__text
+    display block
+    padding 10px 15px
+    line-height: 2rem
+    text-transform uppercase
+    color #444
+    background #fff
+    transition color .2s, background .2s
+    cursor pointer
+    overflow hidden
+    white-space nowrap
+
+    &:hover
+      color #48f
+      background rgba(68, 136, 255, 0.05);
+
+    &:after
+      content ' '
+      position absolute
+      top 10px
+      right 15px
+      width 20px
+      height 20px
+      background-image url('../images/check_blue.svg')
+      background-repeat no-repeat
+      background-position center
+      opacity 0
+      transition opacity .15s
+
 .footer
 
   &__inner

@@ -5,17 +5,19 @@ return j.call(r(a),c)})),b))for(;i>h;h++)b(a[h],c,g?d:d.call(a[h],h,b(a[h],c)));
 
 $(function() {
 
-  $(document).click( function(){
-    $('.list').removeClass('list--opened');
+  $(document).click( function(e){
+
+    var container = $(".dropdown");
+
+    if (!container.is(e.target) && container.has(e.target).length === 0) {
+      $('.filter').removeClass('filter--active');
+    }
+
   });
 
-  $('.list').on('click', function(e){
+  $('.filter__link').on('click', function(e){
     e.stopPropagation();
     e.preventDefault();
-    if($(this).hasClass('list--opened')) {
-      $(this).removeClass('list--opened');
-    } else {
-      $(this).addClass('list--opened');
-    }
+    $(this).parent().toggleClass('filter--active');
   })
 });

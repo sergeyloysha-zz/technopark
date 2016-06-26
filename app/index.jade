@@ -66,19 +66,70 @@ html(lang="en")
       section.filters
         ul.filters__list
           li.filters__item
-            .filter
+            .filter.filter--large
               a.filter__link
-                span.filter__title
-                span.filter__cnt
+                span.filter__title Любого типа
+                span.filter__drop
               .filter__dropdown.dropdown
                 .dropdown__inner
                   ul.dropdown__list
-                    .dropdown__list-item
-                      label.dropdown__item
+                    li.dropdown__item
+                      label.dropdown__link
                         input(type='checkbox').dropdown__input
-                        span.dropdown__link
+                        span.dropdown__text Компакт-камера
+                    li.dropdown__item
+                      label.dropdown__link
+                        input(type='checkbox').dropdown__input
+                        span.dropdown__text Беззеркальная
+                    li.dropdown__item
+                      label.dropdown__link
+                        input(type='checkbox').dropdown__input
+                        span.dropdown__text Зеркальная
+                    li.dropdown__item
+                      label.dropdown__link
+                        input(type='checkbox').dropdown__input
+                        span.dropdown__text Среднеформатная
           li.filters__item
-          li.filters__item
+            .filter
+              a.filter__link
+                span.filter__title Любого бренда
+                span.filter__drop
+              .filter__dropdown.dropdown
+                .dropdown__inner
+                  ul.dropdown__list
+                    li.dropdown__item
+                      label.dropdown__link
+                        input(type='checkbox').dropdown__input
+                        span.dropdown__text Canon
+                    li.dropdown__item
+                      label.dropdown__link
+                        input(type='checkbox').dropdown__input
+                        span.dropdown__text Nikon
+                    li.dropdown__item
+                      label.dropdown__link
+                        input(type='checkbox').dropdown__input
+                        span.dropdown__text Sony
+                    li.dropdown__item
+                      label.dropdown__link
+                        input(type='checkbox').dropdown__input
+                        span.dropdown__text Fujifilm
+                    li.dropdown__item
+                      label.dropdown__link
+                        input(type='checkbox').dropdown__input
+                        span.dropdown__text Samsung
+                    li.dropdown__item
+                      label.dropdown__link
+                        input(type='checkbox').dropdown__input
+                        span.dropdown__text Olympus
+                    li.dropdown__item
+                      label.dropdown__link
+                        input(type='checkbox').dropdown__input
+                        span.dropdown__text Panasonic
+                    li.dropdown__item
+                      label.dropdown__link
+                        input(type='checkbox').dropdown__input
+                        span.dropdown__text Polaroid
+
       section.products
         ul.products__list
           each val in products
@@ -114,7 +165,7 @@ html(lang="en")
             a.footer__link(href='#') Техническая поддержка
           li.footer__item.footer__item--last
             span Сделано в 
-            a.footer__link(href='//skrotskystudio.com/', target='_blank') Студии Вадима Скротского
+            a.footer__link(href='http://skrotskystudio.com/', target='_blank') Студии Вадима Скротского
             
     script(src="js/app.js")
         
