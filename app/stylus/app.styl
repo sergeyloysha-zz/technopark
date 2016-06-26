@@ -351,7 +351,6 @@ main
     padding 0 15px
     line-height 38px
     cursor pointer
-    user-select none
     border 1px solid #999
     background #fff
     transition border .2s, background .2s, box-shadow .3s
@@ -372,6 +371,7 @@ main
     width calc(100% - 25px)
     text-transform uppercase
     color #444
+    user-select none
     white-space nowrap
     overflow hidden
     transition color .2s
@@ -433,6 +433,7 @@ main
     cursor pointer
     overflow hidden
     white-space nowrap
+    user-select none
 
     &:hover
       color #48f
@@ -450,6 +451,53 @@ main
       background-position center
       opacity 0
       transition opacity .15s
+
+.range
+  display flex
+  align-items center
+
+  &__span
+    color #999
+    text-transform uppercase
+    margin 0 15px
+    z-index 21
+
+  &__group
+    display flex
+    flex-direction row
+
+  &__item
+    position relative
+
+    &:last-child
+      .range__input
+        left -1px
+
+    .range__span
+      position absolute
+      top 11px
+      left 0px
+      cursor pointer
+      user-select none
+
+
+  &__input
+    position relative
+    border 1px solid #444
+    padding 10px 15px 10px 50px
+    width 160px
+    text-align right
+    color #444
+    background #fff
+    text-transform uppercase
+    transition background .2s, border .2s
+    z-index 10
+
+    &:focus
+      border 1px solid #48f
+      background rgba(68, 136, 255, 0.05)
+      z-index 20
+
 
 .footer
 

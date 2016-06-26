@@ -5,19 +5,23 @@ return j.call(r(a),c)})),b))for(;i>h;h++)b(a[h],c,g?d:d.call(a[h],h,b(a[h],c)));
 
 $(function() {
 
-  $(document).click( function(e){
-
+  $(document).click( function(e) {
     var container = $(".dropdown");
-
     if (!container.is(e.target) && container.has(e.target).length === 0) {
       $('.filter').removeClass('filter--active');
     }
-
   });
 
   $('.filter__link').on('click', function(e){
     e.stopPropagation();
     e.preventDefault();
     $(this).parent().toggleClass('filter--active');
-  })
+  });
+
+  $('.range__input').on('keyup', function(e) {
+      var input = $(this).val().replace(/\s+/g, '');
+      var response = input.replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1 ");
+      $(this).val(response);
+  });
+
 });

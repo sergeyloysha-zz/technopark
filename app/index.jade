@@ -129,6 +129,17 @@ html(lang="en")
                       label.dropdown__link
                         input(type='checkbox').dropdown__input
                         span.dropdown__text Polaroid
+          li.filters__item
+            .range
+              span.range__span По цене
+              .range__group
+                .range__item
+                  label(for='left_range').range__span от
+                  input(type='text', id='left_range', maxlength="11").range__input
+                .range__item
+                  label(for='right_range').range__span до
+                  input(type='text', id='right_range', maxlength="11").range__input
+              span.range__span Рублей
 
       section.products
         ul.products__list

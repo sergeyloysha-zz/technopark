@@ -429,10 +429,6 @@ main {
   padding: 0 15px;
   line-height: 38px;
   cursor: pointer;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
   border: 1px solid #999;
   background: #fff;
   -webkit-transition: border 0.2s, background 0.2s, -webkit-box-shadow 0.3s;
@@ -456,6 +452,10 @@ main {
   width: calc(100% - 25px);
   text-transform: uppercase;
   color: #444;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
   white-space: nowrap;
   overflow: hidden;
   -webkit-transition: color 0.2s;
@@ -522,6 +522,10 @@ main {
   cursor: pointer;
   overflow: hidden;
   white-space: nowrap;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 .dropdown__text:hover {
   color: #48f;
@@ -540,6 +544,67 @@ main {
   opacity: 0;
   -webkit-transition: opacity 0.15s;
   transition: opacity 0.15s;
+}
+.range {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.range__span {
+  color: #999;
+  text-transform: uppercase;
+  margin: 0 15px;
+  z-index: 21;
+}
+.range__group {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+.range__item {
+  position: relative;
+}
+.range__item:last-child .range__input {
+  left: -1px;
+}
+.range__item .range__span {
+  position: absolute;
+  top: 11px;
+  left: 0px;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+.range__input {
+  position: relative;
+  border: 1px solid #444;
+  padding: 10px 15px 10px 50px;
+  width: 160px;
+  text-align: right;
+  color: #444;
+  background: #fff;
+  text-transform: uppercase;
+  -webkit-transition: background 0.2s, border 0.2s;
+  transition: background 0.2s, border 0.2s;
+  z-index: 10;
+}
+.range__input:focus {
+  border: 1px solid #48f;
+  background: rgba(68,136,255,0.05);
+  z-index: 20;
 }
 .footer__inner {
   max-width: 1170px;
