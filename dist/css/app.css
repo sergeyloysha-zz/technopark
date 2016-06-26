@@ -1,24 +1,33 @@
 @import "normalize.css";
 @font-face {
-  font-family: "robotoregular";
+  font-family: "Roboto";
   font-style: normal;
-  src: url("../fonts/Roboto Regular.ttf");
+  font-weight: 400;
+  src: url("../fonts/Roboto-Regular.woff");
 }
 @font-face {
-  font-family: "robotomedium";
+  font-family: "Roboto";
   font-style: normal;
-  src: url("../fonts/Roboto Medium.ttf");
+  font-weight: 500;
+  src: url("../fonts/Roboto-Medium.woff");
 }
 @font-face {
-  font-family: "robotobold";
+  font-family: "Roboto";
   font-style: normal;
-  src: url("../fonts/Roboto Bold.ttf");
+  font-weight: 600;
+  src: url("../fonts/Roboto-Bold.woff");
 }
 *,
 *:before,
 *:after {
   box-sizing: border-box;
   outline: none;
+}
+::-moz-selection {
+  background: rgba(68,136,255,0.1);
+}
+::selection {
+  background: rgba(68,136,255,0.1);
 }
 html {
   font-size: 62.5%;
@@ -28,8 +37,9 @@ html {
   -moz-osx-font-smoothing: grayscale;
 }
 body {
-  font-family: 'robotoregular', Helvetica, Arial, sans-serif;
+  font-family: 'Roboto', Helvetica, Arial, sans-serif;
   font-size: 1.4rem;
+  font-weight: 500;
   line-height: 1.8rem;
   min-height: 100%;
   position: relative;
@@ -41,15 +51,15 @@ a:visited {
 }
 .header {
   background: #48f;
-  font-family: 'robotomedium';
 }
 .header__inner {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  max-width: 1140px;
+  max-width: 1170px;
   height: 120px;
   margin: 0 auto;
+  padding: 0 15px;
 }
 .head {
   display: flex;
@@ -113,12 +123,12 @@ a:visited {
   line-height: 40px;
   background: transparent;
   border: none;
-  box-shadow: inset 0px -1px 0px 0px rgba(255,255,255,0.5);
+  box-shadow: inset 0px -1px 0px 0px rgba(255,255,255,0.25);
   color: #fff;
   text-transform: uppercase;
   cursor: pointer;
   z-index: 2;
-  transition: box-shadow 0.2s;
+  transition: box-shadow 0.5s;
 }
 .search__input::-webkit-input-placeholder {
   text-transform: uppercase;
@@ -159,7 +169,8 @@ a:visited {
   color: #fff;
   text-transform: uppercase;
   letter-spacing: 1px;
-  transition: all 0.2s;
+  background: transparent;
+  transition: background 0.2s;
 }
 .navigation__link:hover {
   background: #447ada;
@@ -172,4 +183,105 @@ a:visited {
 }
 .navigation__link svg {
   margin-right: 10px;
+}
+main {
+  max-width: 1170px;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+.products__list {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -15px;
+  padding: 0;
+  list-style: none;
+}
+.product {
+  position: relative;
+  min-width: 25%;
+  max-width: 25%;
+  max-height: 383px;
+  flex: 1 1 25%;
+  border-right: 1px solid #e6e6e6;
+  border-bottom: 1px solid #e6e6e6;
+}
+.product__inner {
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+  height: 100%;
+  transition: all 0.2s ease-in-out;
+}
+.product:nth-child(4n) {
+  border-right-color: transparent;
+}
+.product:first-child:after,
+.product:nth-child(5n):after,
+.product:nth-child(4n):after {
+  content: ' ';
+  position: absolute;
+  width: 15px;
+  height: 1px;
+  bottom: -1px;
+  background: #fff;
+  transition: bottom 0.2s ease-in-out;
+}
+.product:first-child:after,
+.product:nth-child(5n):after {
+  left: 0;
+}
+.product:nth-child(4n):after {
+  right: 0;
+}
+.product:hover .product__inner {
+  box-shadow: 0 0 0 1px #48f;
+  background: rgba(68,136,255,0.05);
+}
+.product:hover:after {
+  bottom: -2px;
+}
+.product:hover .product__name {
+  color: #48f;
+}
+.product__image {
+  display: flex;
+  align-items: flex-end;
+  height: 160px;
+  overflow: hidden;
+}
+.product__image--banner {
+  height: 100%;
+}
+.product__image img {
+  display: block;
+}
+.product__name {
+  font-size: 1.8rem;
+  line-height: 2.2rem;
+  color: #444;
+  margin: 25px 0 10px 0;
+  transition: color 0.2s;
+  max-height: 44px;
+  overflow: hidden;
+}
+.product__details {
+  color: #999;
+  font-weight: 300;
+  margin-top: auto;
+  overflow: hidden;
+  height: 71px;
+  margin-bottom: 9px;
+}
+.product__price {
+  display: flex;
+  border-top: 1px solid #48f;
+  align-items: center;
+  padding: 10px 0;
+}
+.product__price span {
+  font-size: 1.8rem;
+  color: #48f;
+}
+.product__price svg {
+  margin-left: auto;
 }

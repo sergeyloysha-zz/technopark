@@ -7,6 +7,7 @@ var reload      = browserSync.reload;
 
 sources = {
   jade: "./app/!(_)*.jade",
+  js: "./app/js/**/*.js",
   stylus: "./app/stylus/**/*.*",
   fonts: "./app/fonts/**/*.*",
   images: "./app/images/**/*.*"
@@ -15,6 +16,7 @@ sources = {
 destinations = {
   server: "./dist",
   html: "./dist/",
+  js: "./dist/js",
   css: "./dist/css",
   fonts: "./dist/fonts",
   images: "./dist/images",
@@ -49,6 +51,12 @@ gulp.task('fonts', function () {
         .pipe(reload({stream: true}));
 });
 
+gulp.task('js', function () {
+    return gulp.src(sources.js)
+        .pipe(gulp.dest(destinations.js))
+        .pipe(reload({stream: true}));
+});
+
 gulp.task('images', function () {
     return gulp.src(sources.images)
         .pipe(gulp.dest(destinations.images))
@@ -60,12 +68,13 @@ gulp.task('deploy', function() {
     .pipe(ghPages());
 });
 
-gulp.task('default', ['stylus', 'templates', 'fonts', 'images'], function () {
+gulp.task('default', ['stylus', 'templates', 'js', 'fonts', 'images'], function () {
 
     browserSync({server: destinations.server});
 
     gulp.watch('./app/stylus/*.styl', ['stylus']);
     gulp.watch('./app/*.jade', ['jade-watch']);
+    gulp.watch('./app/js/**/*.js', ['js']);
     gulp.watch('./app/fonts/**/*.*', ['fonts']);
     gulp.watch('./app/images/**/*.*', ['images']);
 });
