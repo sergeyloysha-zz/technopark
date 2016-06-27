@@ -43,10 +43,12 @@ gulp.task('jade-watch', ['templates'], reload);
 
 gulp.task('stylus', function () {
     var processors = [
-      autoprefixer({browsers: ['last 2 versions', 'Safari <= 9']}),
+      autoprefixer({browsers: ['last 2 versions', 'Safari >=7']}),
     ];
     return gulp.src(sources.stylus)
-        .pipe(stylus({style: "compressed"}))
+        .pipe(stylus({
+          compress: false
+        }))
         .pipe(postcss(processors))
         .pipe(gulp.dest(destinations.css))
         .pipe(reload({stream: true}));
