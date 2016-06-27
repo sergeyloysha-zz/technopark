@@ -38,6 +38,8 @@ html {
   -moz-osx-font-smoothing: grayscale;
 }
 body {
+  position: relative;
+  min-height: 100vh;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -47,16 +49,12 @@ body {
   -webkit-flex-direction: column;
       -ms-flex-direction: column;
           flex-direction: column;
-  min-height: 100vh;
-  font-family: 'Roboto', Helvetica, Arial, sans-serif;
-  font-size: 1.4rem;
-  font-weight: 500;
-  line-height: 1.8rem;
-  position: relative;
+  font: 500 1.4rem/1.8rem 'Roboto', Helvetica, Arial, sans-serif;
   color: #999;
 }
 a,
 a:link,
+a:active,
 a:visited {
   text-decoration: none;
 }
