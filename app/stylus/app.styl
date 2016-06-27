@@ -21,10 +21,11 @@
   src url('../fonts/Roboto-Bold.woff')
 }
 
-base-font = 'Roboto', Helvetica, Arial, sans-serif
+font-base = 'Roboto', Helvetica, Arial, sans-serif
 
-font-size = 1.4rem
-line-height = 1.8rem
+//sizes
+size-font = 1.4rem
+size-line = 1.8rem
 
 //colors
 color-main = rgb(153, 153, 153)
@@ -53,18 +54,16 @@ html
   -moz-osx-font-smoothing grayscale
 
 body
+  position relative
+  min-height 100vh
   display flex
   flex-direction column
-  min-height 100vh
-  font-family base-font
-  font-size font-size
-  font-weight 500
-  line-height line-height
-  position relative
+  font 500 size-font/size-line font-base
   color color-main
 
-a,
-a:link,
+a
+a:link
+a:active
 a:visited
   text-decoration none
 
