@@ -18,6 +18,12 @@ $(function() {
     $(this).parent().toggleClass('filter--active');
   });
 
+  $('.head__button--menu').on('click', function(e){
+    e.stopPropagation();
+    e.preventDefault();
+    $('.navigation').toggleClass('navigation--active');
+  });
+
   $('.range__input').on('keyup', function(e) {
       var input = $(this).val().replace(/\s+/g, '');
       var response = input.replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1 ");
