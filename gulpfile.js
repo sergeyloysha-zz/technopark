@@ -33,7 +33,8 @@ gulp.task('templates', function() {
 
     return gulp.src(sources.jade)
         .pipe(jade({
-            locals: YOUR_LOCALS
+            locals: YOUR_LOCALS,
+            pretty: true
         }))
         .pipe(gulp.dest(destinations.html))
 });

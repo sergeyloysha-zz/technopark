@@ -32,8 +32,10 @@ $(function() {
 
   $('[data-open-id]').on('click', function(e){
     e.preventDefault();
-    $('html').addClass('overlay--open');
-    $('.overlay').removeClass('overlay--hidden');
+    if($(window).width() >= 768) {
+      $('html').addClass('overlay--open');
+      $('.overlay').removeClass('overlay--hidden');
+    }
   });
 
   $('.popup__control').on('click', function(e){
