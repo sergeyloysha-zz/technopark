@@ -749,7 +749,8 @@ main
     i
       background-image url('../images/cart_blue.svg')
 
-@media (max-width 768px)
+
+@media (max-width 1040px)
 
   .header
 
@@ -783,6 +784,7 @@ main
     opacity 0
     overflow hidden
     transition max-height 0.5s, opacity 0.5s
+    will-change max-height, opacity
 
     &--active
       max-height: 100vh
@@ -807,10 +809,10 @@ main
 
   .product
     position relative
-    min-width 100%
-    max-width 100%
+    min-width 50%
+    max-width 50%
     height auto
-    flex 1
+    flex 1 1 50%
     border-right 0
 
     &--banner
@@ -823,9 +825,7 @@ main
     &__details
       height auto
 
-    &:first-child:after,
-    &:nth-child(5n):after,
-    &:nth-child(4n):after
+    &:after
       display none
 
   .filters
@@ -877,3 +877,12 @@ main
 
     &__link:hover
       box-shadow inset 0px -1px 0px 0px transparent
+
+@media (max-width 768px)
+
+  .product
+    position relative
+    min-width 100%
+    max-width 100%
+    height auto
+    flex 1
