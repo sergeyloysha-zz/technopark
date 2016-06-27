@@ -2,7 +2,7 @@
   "name": "Technopark",
   "version": "1.0.0",
   "description": "",
-  "main": "gulpfile.js",
+  "color-main": "gulpfile.js",
   "scripts": {
     "start": "gulp"
   },
