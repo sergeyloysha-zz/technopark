@@ -57,7 +57,7 @@ html(lang="en")
                 span Телевизоры
             li.navigation__item.navigation__item--last
               a(href='#').navigation__link
-                i.icon.icon--cart-white
+                i.icon.icon--cart-white.navigation__link-icon
                 span Корзина
     main
       section.filters
@@ -152,7 +152,7 @@ html(lang="en")
                     span= val.details
                   .product__price
                     span= val.price + ' руб.'
-                    i.icon.icon--cart-blue
+                    i.icon.icon--cart-blue.product__price-icon
             else
               li.product.product--banner
                 a.product__inner(href='#/banner/'+val.id+'')
@@ -220,7 +220,7 @@ html(lang="en")
             .card__info
               span.card__title 12 999 000 руб.
               a.button.button--block(href='#')
-                i.icon.icon--cart-blue
+                i.icon.icon--cart-blue.button__icon
                 span В корзину
               .card__info-stock
                 span.card__info-stock__text В наличии
