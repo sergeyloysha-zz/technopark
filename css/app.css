@@ -21,13 +21,19 @@
 *:before,
 *:after {
   box-sizing: border-box;
-  outline: none;
+}
+*:active {
+  -webkit-tap-highlight-color: rgba(255,255,255,0);
 }
 ::-moz-selection {
   background: rgba(68,136,255,0.05);
 }
 ::selection {
   background: rgba(68,136,255,0.05);
+}
+input:focus,
+textarea:focus {
+  outline: 0;
 }
 html {
   font-size: 62.5%;
@@ -90,20 +96,11 @@ a:visited {
   color: #fff;
   text-transform: uppercase;
   letter-spacing: 1px;
+  box-shadow: inset 0px -1px 0px 0px rgba(255,255,255,0);
+  transition: box-shadow 0.2s;
 }
-.head__link:after {
-  content: '';
-  display: inline-block;
-  position: absolute;
-  bottom: -2px;
-  width: 0;
-  left: 0;
-  height: 1px;
-  background: rgba(255,255,255,0.3);
-  transition: width 0.15s;
-}
-.head__link:hover::after {
-  width: 100%;
+.head__link:hover {
+  box-shadow: inset 0px -1px 0px 0px rgba(255,255,255,0.25);
 }
 .head__link--phone {
   margin: 0 45px;
@@ -205,7 +202,7 @@ a:visited {
   text-transform: uppercase;
   color: rgba(255,255,255,0.5);
 }
-.search__input:-moz-placeholder {
+.search__input::placeholder {
   text-transform: uppercase;
   color: rgba(255,255,255,0.5);
 }
