@@ -488,7 +488,9 @@ main
     z-index 99
     background alpha(color-main, 0.5)
     overflow hidden
-    transition all .15s ease-in-out
+    will-change background, visibility
+    transition: background 0.3s ease-in, visibility 0.3s ease-in;
+    visibility visible
 
 
     +min(s)
@@ -499,23 +501,25 @@ main
 
     &--hidden
       background transparent
-      z-index -1
+      visibility hidden
+      transition: background 0.3s ease-in, visibility 0.3s ease-in;
 
       .filters__container
         right -230px
+        box-shadow: none
 
   &__container
     position absolute
+    will-change right, box-shadow
     top 0
     right 0
     bottom 0
     background color-white
+    width 230px
     height 100%
     z-index 102
-    transition right .5s
-
-    &-inner
-      width 230px
+    transition right .3s ease-in, box-shadow .3s ease-in
+    box-shadow 0 0px 50px 0 alpha(color-black, 0.2)
 
     .filters__head
       margin 0
