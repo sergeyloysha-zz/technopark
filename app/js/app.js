@@ -44,4 +44,9 @@ $(function() {
     $('.overlay').addClass('overlay--hidden');
   });
 
+  $('.filters__head-drop').on('click', function(e){
+    e.preventDefault();
+    $('.filters__overlay').toggleClass('filters__overlay--hidden');
+  });
+
 });
