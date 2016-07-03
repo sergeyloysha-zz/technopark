@@ -587,7 +587,9 @@ main {
   z-index: 99;
   background: rgba(153,153,153,0.5);
   overflow: hidden;
-  transition: all 0.15s ease-in-out;
+  will-change: background, visibility;
+  transition: background 0.3s ease-in, visibility 0.3s ease-in;
+  visibility: visible;
 }
 @media screen and (min-width: 768px) {
   .filters__overlay {
@@ -601,23 +603,25 @@ main {
 }
 .filters__overlay--hidden {
   background: transparent;
-  z-index: -1;
+  visibility: hidden;
+  transition: background 0.3s ease-in, visibility 0.3s ease-in;
 }
 .filters__overlay--hidden .filters__container {
   right: -230px;
+  box-shadow: none;
 }
 .filters__container {
   position: absolute;
+  will-change: right, box-shadow;
   top: 0;
   right: 0;
   bottom: 0;
   background: #fff;
+  width: 230px;
   height: 100%;
   z-index: 102;
-  transition: right 0.5s;
-}
-.filters__container-inner {
-  width: 230px;
+  transition: right 0.3s ease-in, box-shadow 0.3s ease-in;
+  box-shadow: 0 0px 50px 0 rgba(0,0,0,0.2);
 }
 .filters__container .filters__head {
   margin: 0;
