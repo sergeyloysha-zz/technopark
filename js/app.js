@@ -5,8 +5,10 @@ return j.call(r(a),c)})),b))for(;i>h;h++)b(a[h],c,g?d:d.call(a[h],h,b(a[h],c)));
 
 $(function() {
 
+  'use strict';
+
   $(document).click( function(e) {
-    var container = $(".dropdown");
+    var container = $('.dropdown');
     if (!container.is(e.target) && container.has(e.target).length === 0) {
       $('.filter').removeClass('filter--active');
     }
@@ -26,7 +28,7 @@ $(function() {
 
   $('.range__input').on('keyup', function(e) {
       var input = $(this).val().replace(/\s+/g, '');
-      var response = input.replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1 ");
+      var response = input.replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1 ');
       $(this).val(response);
   });
 
@@ -44,9 +46,13 @@ $(function() {
     $('.overlay').addClass('overlay--hidden');
   });
 
-  $('.filters__head-drop').on('click', function(e){
+  $('#filters-open').on('click', function(e){
     e.preventDefault();
-    $('.filters__overlay').toggleClass('filters__overlay--hidden');
+    $('.filters__overlay').removeClass('filters__overlay--hidden');
+  });
+  $('#filters-close').on('click', function(e){
+    e.preventDefault();
+    $('.filters__overlay').addClass('filters__overlay--hidden');
   });
 
 });

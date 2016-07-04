@@ -52,7 +52,7 @@
       <section class="filters">
         <ul class="filters__list filters__list--mobile">
           <div class="filters__head">
-            <div class="filters__head-title"><span>Фототехника</span></div><i class="icon icon--filter filters__head-drop"></i>
+            <div class="filters__head-title"><span>Фототехника</span></div><i id="filters-open" class="icon icon--filter filters__head-drop"></i>
           </div>
         </ul>
         <ul class="filters__list filters__list--desktop">
@@ -162,7 +162,9 @@
               <div class="product__details"><span>Зеркальная, 18 Мп 1.6 crop, с объективом F3.5-5.6 18-55 мм, экран 3&quot;, видоискатель оптический</span></div>
               <div class="product__price"><span>5 967 000 руб.</span><i class="icon icon--cart-blue product__price-icon"></i></div></a></li>
           <li class="product product--banner"><a href="#/banner/2" class="product__inner">
-              <div style="background-image: url('images/banners/banner_a.png')" class="product__image product__image--banner product__image--left"></div></a></li>
+              <div style="background-image: url('images/banners/banner_a.png')" class="product__image product__image--banner product__image--left">
+                <div class="product__text">Экшен-камера Xiaomi Yi Action Camera Basic Edition</div>
+              </div></a></li>
           <li class="product"><a href="/product/3" data-open-id="3" class="product__inner">
               <div class="product__image"><img src="images/products/700d.jpg"></div>
               <div class="product__name">
@@ -233,7 +235,7 @@
       <div class="filters__overlay filters__overlay--hidden">
         <div class="filters__container">
           <div class="filters__head">
-            <div class="filters__head-title"><span>Подбор товаров</span></div><i class="icon icon--close filters__head-drop"></i>
+            <div class="filters__head-title"><span>Подбор товаров</span></div><i id="filters-close" class="icon icon--close filters__head-drop"></i>
           </div>
           <div class="filter">
             <div class="filter__head"><span class="filter__head-text">Тип</span></div>
@@ -341,9 +343,9 @@
     <footer class="footer">
       <div class="footer__inner">
         <ul class="footer__list">
-          <li class="footer__item"><span>&copy; Технопарк 2016</span></li>
-          <li class="footer__item"><a href="#" class="footer__link">Доставка и оплата</a></li>
-          <li class="footer__item"><a href="#" class="footer__link">Техническая поддержка</a></li>
+          <li class="footer__item footer__item--third"><span>&copy; Технопарк 2016</span></li>
+          <li class="footer__item footer__item--first"><a href="#" class="footer__link">Доставка и оплата</a></li>
+          <li class="footer__item footer__item--second"><a href="#" class="footer__link">Техническая поддержка</a></li>
           <li class="footer__item footer__item--last"><span>Сделано в </span><a href="http://skrotskystudio.com/" target="_blank" class="footer__link">Студии Вадима Скротского</a></li>
         </ul>
       </div>
