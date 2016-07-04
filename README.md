@@ -1,6 +1,6 @@
-# technopark
+# Technopark
 @skrotskystudio https://sergeyloysha.github.io/technopark
-
+##### Author: @sergeyloysha
 ## Installation
 ```
 git clone https://github.com/sergeyloysha/technopark.git
