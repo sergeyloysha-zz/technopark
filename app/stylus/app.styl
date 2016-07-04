@@ -21,25 +21,27 @@
   src url('../fonts/Roboto-Bold.woff')
 }
 
-//fonts
+
+/*
+  Fonts
+*/
 font-base = 'Roboto', Helvetica, Arial, sans-serif
 
-//sizes
+/*
+  Sizes
+*/
 size-font = 1.4rem
 size-line = 1.8rem
-//screen sizes
+/*
+  Screen sizes
+*/
 s = 768px
 m = 1024px
 l = 1200px
 
-min(minWidth)
-  @media screen and (min-width: minWidth)
-    {block}
-minmax(minWidth, maxWidth)
-  @media screen and (min-width: minWidth) and (max-width: maxWidth)
-    {block}
-
-//colors
+/*
+  Colors
+*/
 color-main = rgb(153, 153, 153)
 color-light = rgb(230, 230, 230)
 color-dark = rgb(68, 68, 68)
@@ -47,6 +49,19 @@ color-black = rgb(0, 0, 0)
 color-white = rgb(255, 255, 255)
 color-blue = rgb(68, 136, 255)
 
+/*
+  Media mixins
+*/
+mediaMin(minWidth)
+  @media screen and (min-width: minWidth)
+    {block}
+mediaBetween(minWidth, maxWidth)
+  @media screen and (min-width: minWidth) and (max-width: maxWidth)
+    {block}
+
+/*
+  Css
+*/
 *
   &
   &:before
@@ -97,7 +112,7 @@ a:visited
     height initial
     margin 0 auto
 
-    +min(s)
+    +mediaMin(s)
       max-width 1170px
       height 120px
       padding 0 15px
@@ -107,13 +122,13 @@ a:visited
   justify-content space-between
   align-items center
 
-  +min(s)
+  +mediaMin(s)
     margin 15px 0 0 0
 
   &__link
     display none
 
-    +min(s)
+    +mediaMin(s)
       display block
       position relative
       color color-white
@@ -170,7 +185,7 @@ a:visited
       right 15px
       background-image url('../images/search_white.svg')
 
-    +min(s)
+    +mediaMin(s)
       display none
 
 .logo
@@ -178,12 +193,12 @@ a:visited
 
   &__small
     display flex
-    +min(s)
+    +mediaMin(s)
       display none
 
   &__big
     display none
-    +min(s)
+    +mediaMin(s)
       display flex
 
   &:active
@@ -192,7 +207,7 @@ a:visited
 .search
   display none
 
-  +min(s)
+  +mediaMin(s)
     display flex
     position relative
 
@@ -230,20 +245,23 @@ a:visited
       cursor auto
 
 .navigation
+  position absolute
+  background color-blue
+  width 100%
   max-height 0
-  opacity 0
   overflow hidden
-  transition max-height 0.5s, opacity 0.5s
+  transition max-height .5s ease-in-out
   will-change max-height, opacity
 
-  +min(s)
+  +mediaMin(s)
+    position relative
+    background transparent
     max-height initial
     opacity 1
     overflow initial
 
   &--active
     max-height 100vh
-    opacity 1
 
   &__list
     display flex
@@ -251,7 +269,7 @@ a:visited
     margin 0
     padding 0
 
-    +min(s)
+    +mediaMin(s)
       flex-direction row
       margin: 0 -15px
 
@@ -259,7 +277,7 @@ a:visited
     list-style none
     &--last
       display none
-      +min(s)
+      +mediaMin(s)
         display inherit
         margin-left auto
 
@@ -292,7 +310,10 @@ main
   margin 0 auto
   overflow hidden
 
-  +min(m)
+  +mediaMin(m)
+    overflow initial
+
+  +mediaMin(m)
     max-width 1170px
     padding 0 15px
 
@@ -306,10 +327,10 @@ main
     padding 0
     list-style none
 
-    +min(s)
+    +mediaMin(s)
       flex-direction row
 
-    +min(m)
+    +mediaMin(m)
       margin 0 -15px
 
 .product
@@ -319,7 +340,7 @@ main
   flex 1
   border-bottom 1px solid color-light
 
-  +min(s)
+  +mediaMin(s)
     position relative
     min-width 50%
     max-width 50%
@@ -327,7 +348,7 @@ main
     flex 1 1 50%
     border-right 1px solid color-light
 
-  +min(m)
+  +mediaMin(m)
     position relative
     min-width 25%
     max-width 25%
@@ -358,7 +379,7 @@ main
   &--banner
     display none
 
-    +min(m)
+    +mediaMin(m)
       display block
 
   &__inner
@@ -368,7 +389,7 @@ main
     height 100%
     transition all 0.2s ease-in-out
 
-    +min(m)
+    +mediaMin(m)
       padding 15px
 
   &:hover &__inner
@@ -379,12 +400,13 @@ main
     color color-blue
 
   &__image
+    position relative
     display flex
     align-items flex-end
     overflow hidden
     margin-top 20px
 
-    +min(s)
+    +mediaMin(s)
       margin-top 0
       height 150px
 
@@ -404,7 +426,7 @@ main
   &__name
     margin 25px 0 10px 0
 
-    +min(s)
+    +mediaMin(s)
       height 44px
       overflow hidden
 
@@ -422,7 +444,7 @@ main
     overflow hidden
     margin-bottom 15px
 
-    +min(s)
+    +mediaMin(s)
       margin-top auto
       height 71px
       margin-bottom 9px
@@ -440,8 +462,18 @@ main
     &-icon
       margin-left auto
 
+  &__text
+    position absolute
+    left 0
+    right 0
+    bottom 0
+    padding 25px 30px
+    font-size 1.8rem
+    color color-white
+    line-height 2.2rem
+
 .filters
-  +min(m)
+  +mediaMin(m)
     margin 30px 0 45px 0
 
   &__list
@@ -452,12 +484,12 @@ main
     list-style none
 
     &--mobile
-      +min(m)
+      +mediaMin(m)
         display none
 
     &--desktop
       display none
-      +min(m)
+      +mediaMin(m)
         display flex
 
   &__head
@@ -493,10 +525,10 @@ main
     visibility visible
 
 
-    +min(s)
+    +mediaMin(s)
       top 120px
 
-    +min(m)
+    +mediaMin(m)
       display none
 
     &--hidden
@@ -768,37 +800,70 @@ main
 
 
 .footer
-  display none
-
-  +min(m)
-    display block
 
   &__inner
-    max-width 1170px
-    min-width 1024px
-    padding 0 15px
-    margin 0 auto
+    padding 0 20px
+
+    +mediaMin(m)
+      max-width 1170px
+      padding 0 15px
+      margin 0 auto
 
   &__list
-    margin 100px 0 15px 0
+    margin 20px 0
     padding 0
     list-style none
-
     display flex
+    flex-direction column
+
+    +mediaMin(m)
+      flex-direction row
+      margin 100px 0 15px 0
 
   &__item
-    margin-left 30px
     line-height 2rem
+    font-weight 400
 
-    &:first-child
-      margin-left 0
+    &--first
+    &--second
+      line-height 70px
+      border-bottom 1px solid color-light
 
+      a
+        line-height 20px
+
+    &--first
+      order 1
+    &--second
+      order 2
+      margin-bottom 40px
+    &--third
+      order 3
+      margin-bottom 5px
     &--last
-      margin-left auto
+      order 4
 
-  &__item
-    span
-      font-weight 400
+    +mediaMin(m)
+      margin-left 30px
+
+      &:first-child
+        margin-left 0
+
+      &--first
+      &--second
+        line-height initial
+        border-bottom 0
+
+      &--first
+        order 2
+      &--second
+        order 3
+        margin-bottom 0
+      &--third
+        order 1
+        margin-bottom 0
+      &--last
+        margin-left auto
 
   &__link
     display inline-block
@@ -988,5 +1053,5 @@ main
     background-image url('../images/close_dark.svg')
 
 .hide_s
-  +minmax(s,m)
+  +mediaBetween(s,m)
     display none

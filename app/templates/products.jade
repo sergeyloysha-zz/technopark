@@ -1,0 +1,23 @@
+section.products
+  ul.products__list
+    each val in products
+      if val.type == 1
+        li.product
+          a.product__inner(href='/product/'+val.id+'', data-open-id=''+val.id+'')
+            .product__image
+              img(src='images/products/'+val.image+'')
+            .product__name
+               h3= val.name
+            .product__details
+              span= val.details
+            .product__price
+              span= val.price + ' руб.'
+              i.icon.icon--cart-blue.product__price-icon
+      else
+        li.product.product--banner
+          a.product__inner(href='#/banner/'+val.id+'')
+            if val.name == ''
+              .product__image.product__image--banner.product__image--right(style="background-image: url('images/banners/"+val.image+"')")
+            else
+              .product__image.product__image--banner.product__image--left(style="background-image: url('images/banners/"+val.image+"')")
+                .product__text= val.name

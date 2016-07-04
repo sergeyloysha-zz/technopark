@@ -1,0 +1,82 @@
+section.filters
+  ul.filters__list.filters__list--mobile
+    .filters__head
+      .filters__head-title
+        span Фототехника
+      i.icon.icon--filter.filters__head-drop#filters-open
+  ul.filters__list.filters__list--desktop
+    li.filters__item
+      .filter.filter--large
+        a.filter__link
+          span.filter__title Любого типа
+          span.filter__drop
+        .filter__dropdown.dropdown
+          .dropdown__inner
+            ul.dropdown__list
+              li.dropdown__item
+                label.dropdown__link
+                  input(type='checkbox').dropdown__input
+                  span.dropdown__text Компакт-камера
+              li.dropdown__item
+                label.dropdown__link
+                  input(type='checkbox').dropdown__input
+                  span.dropdown__text Беззеркальная
+              li.dropdown__item
+                label.dropdown__link
+                  input(type='checkbox').dropdown__input
+                  span.dropdown__text Зеркальная
+              li.dropdown__item
+                label.dropdown__link
+                  input(type='checkbox').dropdown__input
+                  span.dropdown__text Среднеформатная
+    li.filters__item
+      .filter.filter--medium
+        a.filter__link
+          span.filter__title Любого бренда
+          span.filter__drop
+        .filter__dropdown.dropdown
+          .dropdown__inner
+            ul.dropdown__list
+              li.dropdown__item
+                label.dropdown__link
+                  input(type='checkbox').dropdown__input
+                  span.dropdown__text Canon
+              li.dropdown__item
+                label.dropdown__link
+                  input(type='checkbox').dropdown__input
+                  span.dropdown__text Nikon
+              li.dropdown__item
+                label.dropdown__link
+                  input(type='checkbox').dropdown__input
+                  span.dropdown__text Sony
+              li.dropdown__item
+                label.dropdown__link
+                  input(type='checkbox').dropdown__input
+                  span.dropdown__text Fujifilm
+              li.dropdown__item
+                label.dropdown__link
+                  input(type='checkbox').dropdown__input
+                  span.dropdown__text Samsung
+              li.dropdown__item
+                label.dropdown__link
+                  input(type='checkbox').dropdown__input
+                  span.dropdown__text Olympus
+              li.dropdown__item
+                label.dropdown__link
+                  input(type='checkbox').dropdown__input
+                  span.dropdown__text Panasonic
+              li.dropdown__item
+                label.dropdown__link
+                  input(type='checkbox').dropdown__input
+                  span.dropdown__text Polaroid
+    li.filters__item
+      .range
+        span.range__span По цене
+        .range__group
+          .range__item
+            label(for='left_range').range__span от
+            input(type='text', id='left_range', maxlength="11", placeholder='500 000').range__input
+          .range__item
+            label(for='right_range').range__span до
+            input(type='text', id='right_range', maxlength="11", placeholder='1 000 000').range__input
+        span.range__span Рублей

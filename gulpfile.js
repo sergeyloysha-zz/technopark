@@ -12,7 +12,8 @@ sources = {
   js: "./app/js/**/*.js",
   stylus: "./app/stylus/**/*.*",
   fonts: "./app/fonts/**/*.*",
-  images: "./app/images/**/*.*"
+  images: "./app/images/**/*.*",
+  templates: "./app/templates/**/*.*"
 };
 
 destinations = {
@@ -82,6 +83,7 @@ gulp.task('default', ['stylus', 'templates', 'js', 'fonts', 'images'], function 
     browserSync({server: destinations.server});
 
     gulp.watch('./app/stylus/*.styl', ['stylus']);
+    gulp.watch(sources.templates, ['jade-watch']);
     gulp.watch('./app/*.jade', ['jade-watch']);
     gulp.watch('./app/js/**/*.js', ['js']);
     gulp.watch('./app/fonts/**/*.*', ['fonts']);
