@@ -1,6 +1,14 @@
 # technopark
 @skrotskystudio https://sergeyloysha.github.io/technopark
 
+## Installation
+```
+git clone https://github.com/sergeyloysha/technopark.git
+cd technopark
+npm install
+gulp
+```
+
 ## Mobile screens
 ![Mobile](https://raw.githubusercontent.com/sergeyloysha/technopark/master/screens/mobile.png)
 ![Menu](https://raw.githubusercontent.com/sergeyloysha/technopark/master/screens/mobile-menu.png)
